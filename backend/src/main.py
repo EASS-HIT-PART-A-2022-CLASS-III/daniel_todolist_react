@@ -40,9 +40,9 @@ async def get_todos():
 
 @app.delete('/remove')
 async def remove_todo(item: TodoItem):
-    # Todo: remove
-    del db[item.title]
-    return item
+    db.remove(item)
+    return {"message": "Item removed successfully"}
+
 
 
 
